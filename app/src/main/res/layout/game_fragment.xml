@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_GameFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mainactivity.gamefragment.GameFragment">
+
+    <ToggleButton
+        android:id="@+id/tbtn_GameInputMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        android:textOff="Keyboard"
+        android:textOn="Voice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_GameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_GameCurrentPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_GameTitle" />
+
+    <TextView
+        android:id="@+id/tv_GameCurrentScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_GameCurrentPlayer" />
+
+    <TextView
+        android:id="@+id/tv_GameCurrentAverage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_GameCurrentScore" />
+
+    <TextView
+        android:id="@+id/tv_GameCurrentThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/gl_GameVertical78"
+        app:layout_constraintTop_toTopOf="@+id/tv_GameCurrentPlayer" />
+
+    <TextView
+        android:id="@+id/tv_GameCurrentSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@+id/gl_GameVertical78"
+        app:layout_constraintStart_toStartOf="@+id/gl_GameVertical56"
+        app:layout_constraintTop_toTopOf="@+id/tv_GameCurrentThird" />
+
+    <TextView
+        android:id="@+id/tv_GameCurrentFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@+id/gl_GameVertical56"
+        app:layout_constraintStart_toStartOf="@+id/gl_GameVertical33"
+        app:layout_constraintTop_toTopOf="@+id/tv_GameCurrentSecond" />
+
+    <TextView
+        android:id="@+id/tv_GameCurrentDartsCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/gl_GameVertical78"
+        app:layout_constraintStart_toStartOf="@+id/gl_GameVertical56"
+        app:layout_constraintTop_toTopOf="@+id/tv_GameCurrentScore" />
+
+    <TextView
+        android:id="@+id/tv_GameCurrentFinishThird"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/gl_GameVertical78"
+        app:layout_constraintTop_toTopOf="@+id/tv_GameCurrentAverage" />
+
+    <TextView
+        android:id="@+id/tv_GameCurrentFinishSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@+id/gl_GameVertical78"
+        app:layout_constraintStart_toStartOf="@+id/gl_GameVertical56"
+        app:layout_constraintTop_toTopOf="@+id/tv_GameCurrentFinishThird" />
+
+    <TextView
+        android:id="@+id/tv_GameCurrentFinishFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@+id/gl_GameVertical56"
+        app:layout_constraintStart_toStartOf="@+id/gl_GameVertical33"
+        app:layout_constraintTop_toTopOf="@+id/tv_GameCurrentFinishSecond" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_GameVertical33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.34" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_GameVertical56"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.56" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_GameVertical78"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_GameNumpad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#3A2877"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_GameNumpadVertical50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_GameNumpadVertical33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33333333" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_GameNumpadVertical67"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6666666666" />
+
+        <Button
+            android:id="@+id/btn_GameNumpadUndo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Undo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad19"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="19"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpadUndo"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical33"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="16"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad19"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical33"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad13"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="13"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad16"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical33"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="10"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad13"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical33"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="7"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad10"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical33"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="4"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad7"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical33"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="1"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad4"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical33"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_GameNumpadDouble"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="double"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad1"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical33"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="20"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpadUndo"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical67"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical33" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad17"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="17"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad20"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical67"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical33" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="14"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad17"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical67"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical33" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad11"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="11"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad14"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical67"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical33" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="8"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad11"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical67"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical33" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="5"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad8"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical67"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical33" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="2"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad5"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical67"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical33" />
+
+        <Button
+            android:id="@+id/btn_GameNumpadTriple"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="triple"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad2"
+            app:layout_constraintEnd_toStartOf="@+id/gl_GameNumpadVertical67"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical33"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad25"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Bull"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpadUndo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical67" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad18"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="18"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad25"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical67" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad15"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="15"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical67" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="12"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical67" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="9"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical67" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="6"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical67" />
+
+        <Button
+            android:id="@+id/btn_GameNumpad3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="3"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical67" />
+
+        <Button
+            android:id="@+id/btn_GameNumpadMiss"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Miss"
+            app:layout_constraintBottom_toTopOf="@+id/btn_GameNumpad3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_GameNumpadVertical67" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_GamePlayerList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/cl_GameNumpad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_GameCurrentAverage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,22 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/game">
+        <ListPreference
+            app:key="@string/voice_input_language_key"
+            app:title="@string/input_language"
+            app:defaultValue="english"
+            app:entries="@array/input_languages_entries"
+            app:entryValues="@array/input_languages_values"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:key="@string/finish_mode_key"
+            app:title="@string/finish_mode"
+            app:defaultValue="until_last"
+            app:entries="@array/finish_mode_entries"
+            app:entryValues="@array/finish_mode_values"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

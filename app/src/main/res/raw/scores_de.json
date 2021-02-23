@@ -1,0 +1,94 @@
+[
+	{
+		"score": 0,
+		"strings": ["daneben", "vorbei"]
+	},
+	{
+		"score": 1,
+		"strings": ["eins", "1"]
+	},
+	{
+		"score": 2,
+		"strings": ["zwei", "2"]
+	},
+	{
+		"score": 3,
+		"strings": ["drei", "3"]
+	},
+	{
+		"score": 4,
+		"strings": ["vier", "4"]
+	},
+	{
+		"score": 5,
+		"strings": ["fünf", "fuenf", "5", "V"]
+	},
+	{
+		"score": 6,
+		"strings": ["sechs", "6"]
+	},
+	{
+		"score": 7,
+		"strings": ["sieben", "7"]
+	},
+	{
+		"score": 8,
+		"strings": ["acht", "8"]
+	},
+	{
+		"score": 9,
+		"strings": ["neun", "9"]
+	},
+	{
+		"score": 10,
+		"strings": ["zehn", "10", "X"]
+	},
+	{
+		"score": 11,
+		"strings": ["elf", "11"]
+	},
+	{
+		"score": 12,
+		"strings": ["zwölf", "zwoelf", "12"]
+	},
+	{
+		"score": 13,
+		"strings": ["dreizehn", "drei zehn", "drei-zehn", "13"]
+	},
+	{
+		"score": 14,
+		"strings": ["vierzehn", "vier zehn", "vier-zehn", "14"]
+	},
+	{
+		"score": 15,
+		"strings": ["fünfzehn", "fünf zehn", "fünf-zehn", "fuenzehn", "fuenf zehn", "fuenf-zehn", "15", "XV"]
+	},
+	{
+		"score": 16,
+		"strings": ["sechzehn", "sech zehn", "sech-zehn", "16"]
+	},
+	{
+		"score": 17,
+		"strings": ["siebzehn", "sieb zehn", "sieb-zehn", "17"]
+	},
+	{
+		"score": 18,
+		"strings": ["achtzehn", "acht zehn", "acht-zehn", "18"]
+	},
+	{
+		"score": 19,
+		"strings": ["neunzehn", "neun zehn", "neun-zehn", "19"]
+	},
+	{
+		"score": 20,
+		"strings": ["zwanzig", "20", "XX"]
+	},
+	{
+		"score": 25,
+		"strings": ["fünfundzwanzig", "fünf und zwanzig", "fünf-und-zwanzig", "fuenfundzwanzig", "fuenf und zwanzig", "fuenf-und-zwanzig", "25", "XXV", "20 X", "20 5", "bull", "single bull"]
+	},
+	{
+		"score": 50,
+		"strings": ["bullseye", "bulls eye", "bulls-eye", "bull's eye"]
+	}
+]
