@@ -1,7 +1,9 @@
 package com.example.dartscounter.mainactivity.gamefragment;
 
 import android.content.DialogInterface;
+import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -154,24 +156,33 @@ public class GameFragment extends Fragment {
         btnPoints.add(btnBull);
 
         btnDouble = view.findViewById(R.id.btn_GameNumpadDouble);
+        btnTriple = view.findViewById(R.id.btn_GameNumpadTriple);
         btnDouble.setOnClickListener(v -> {
             doubleHit = !doubleHit;
             mViewModel.setDoubleHit(doubleHit);
             if(doubleHit){
-                v.setBackgroundColor(getResources().getColor(R.color.purple_200));
+                v.setBackgroundColor(fetchColor(R.attr.colorSecondary));
+                if(tripleHit)
+                {
+                    btnTriple.callOnClick();
+                }
             } else {
-                v.setBackgroundColor(getResources().getColor(R.color.purple_500));
+                v.setBackgroundColor(fetchColor(R.attr.colorPrimary));
             }
         });
-        btnTriple = view.findViewById(R.id.btn_GameNumpadTriple);
         btnTriple.setOnClickListener(v -> {
             tripleHit = !tripleHit;
             mViewModel.setTripleHit(tripleHit);
             if(tripleHit){
-                v.setBackgroundColor(getResources().getColor(R.color.purple_200));
+                //v.setBackgroundColor(getResources().getColor(R.color.design_default_color_primary_variant));
+                v.setBackgroundColor(fetchColor(R.attr.colorSecondary));
                 btnBull.setEnabled(false);
+                if(doubleHit)
+                {
+                    btnDouble.callOnClick();
+                }
             } else {
-                v.setBackgroundColor(getResources().getColor(R.color.purple_500));
+                v.setBackgroundColor(fetchColor(R.attr.colorPrimary));
                 btnBull.setEnabled(true);
             }
         });
@@ -213,13 +224,23 @@ public class GameFragment extends Fragment {
         doubleHit = false;
         tripleHit = false;
         btnBull.setEnabled(true);
-        btnDouble.setBackgroundColor(getResources().getColor(R.color.purple_500));
-        btnTriple.setBackgroundColor(getResources().getColor(R.color.purple_500));
-
+        btnDouble.setBackgroundColor(fetchColor(R.attr.colorPrimary));
+        btnTriple.setBackgroundColor(fetchColor(R.attr.colorPrimary));
     }
 
     public void onExit() {
         mViewModel.newGame();
         Navigation.findNavController(getActivity(), R.id.nav_host_fragment).navigate(GameFragmentDirections.actionGameFragmentToStartFragment());
+    }
+
+    private int fetchColor(int colorID) {
+        TypedValue typedValue = new TypedValue();
+
+        TypedArray a = getContext().obtainStyledAttributes(typedValue.data, new int[] { colorID });
+        int color = a.getColor(0, 0);
+
+        a.recycle();
+
+        return color;
     }
 }
