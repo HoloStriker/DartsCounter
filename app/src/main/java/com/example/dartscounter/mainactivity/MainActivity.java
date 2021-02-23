@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.dartscounter.R;
@@ -34,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
 
         mNavController = getNavController();
-        NavigationUI.setupActionBarWithNavController(this, mNavController);
+        AppBarConfiguration appBarConfiguration =
+                new AppBarConfiguration.Builder(R.id.startFragment, R.id.gameFragment, R.id.finishFragment).build();
+        NavigationUI.setupActionBarWithNavController(this, mNavController, appBarConfiguration);
     }
 
     /*private void loadStartFragment() {

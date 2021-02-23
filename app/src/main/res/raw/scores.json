@@ -1,7 +1,7 @@
 [
 	{
 		"score": 0,
-		"strings": ["miss"]
+		"strings": ["miss", "zero", "0"]
 	},
 	{
 		"score": 1,

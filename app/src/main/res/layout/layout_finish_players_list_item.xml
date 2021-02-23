@@ -32,13 +32,40 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/gl_FinishPlayerItemVertical25"
+        app:layout_constraintStart_toStartOf="@+id/gl_FinishPlayerItemVertical20"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_FinishPlayerItemVertical25"
+        android:id="@+id/gl_FinishPlayerItemVertical20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_FinishPlayerItemVertical60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <TextView
+        android:id="@+id/tv_FinishPlayerItemAverage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/gl_FinishPlayerItemVertical60"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_FinishPlayerItemDarts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/gl_FinishPlayerItemVertical60"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

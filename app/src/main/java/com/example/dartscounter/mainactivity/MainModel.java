@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
@@ -61,6 +62,7 @@ public class MainModel implements SharedPreferences.OnSharedPreferenceChangeList
 
     private List<Player> finishOrder;
     private boolean gameFinished = false;
+    private boolean nextPlayer = false;
 
     public static MainModel getInstance(Context context) {
         if (mModelInstance == null) {
@@ -223,19 +225,31 @@ public class MainModel implements SharedPreferences.OnSharedPreferenceChangeList
     }
 
     public void scoreHit(int points) {
+        if(nextPlayer){
+            switchToNextPlayer();
+        }
         evaluateScore(points);
     }
 
     public void doubleHit(boolean hit) {
+        if(nextPlayer){
+            switchToNextPlayer();
+        }
         doubHit = hit;
     }
 
     public void tripleHit(boolean hit) {
+        if(nextPlayer){
+            switchToNextPlayer();
+        }
         tripHit = hit;
     }
 
     public void undo() {
         if (legThrows > 0) {
+            if(nextPlayer){
+                nextPlayer = false;
+            }
             legThrows--;
             String tryToRedo = currentPlayerPointer.getTries()[legThrows];
             int scoreToRedo = 0;
@@ -301,6 +315,7 @@ public class MainModel implements SharedPreferences.OnSharedPreferenceChangeList
         tripHit = false;
         isListening = false;
         gameFinished = false;
+        nextPlayer = false;
         gameHasFinished.setValue(false);
         finishOrder.clear();
     }
@@ -344,14 +359,14 @@ public class MainModel implements SharedPreferences.OnSharedPreferenceChangeList
             }
 
             for (int i = 0; i < data.size(); i++) {
-                if (((String) data.get(i)).contains(DOUBLE)) {
-                    doubHit = true;
-                    String rep = ((String) data.get(i)).replace(DOUBLE + " ", "");
-                    data.set(i, rep);
-                }
                 if (((String) data.get(i)).contains(TRIPLE)) {
                     tripHit = true;
                     String rep = ((String) data.get(i)).replace(TRIPLE + " ", "");
+                    data.set(i, rep);
+                }
+                else if (((String) data.get(i)).contains(DOUBLE)) {
+                    doubHit = true;
+                    String rep = ((String) data.get(i)).replace(DOUBLE + " ", "");
                     data.set(i, rep);
                 }
             }
@@ -402,23 +417,37 @@ public class MainModel implements SharedPreferences.OnSharedPreferenceChangeList
         doubHit = false;
         tripHit = false;
         if (legThrows >= 3) {
-            legThrows = 0;
             //TODO: Tell remaining points
             tellScore();
             if(!gameFinished){
-                do {
-                    currentPlayIndex++;
-                    if (currentPlayIndex >= playersList.size()) {
-                        currentPlayIndex = 0;
+                nextPlayer = true;
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(nextPlayer){
+                            switchToNextPlayer();
+                        }
                     }
-                } while (playersList.get(currentPlayIndex).getCurrentScore() <= 0);
-
-                currentPlayerPointer = playersList.get(currentPlayIndex);
-                currentPlayer.postValue(currentPlayerPointer);
-                backupScore = currentPlayerPointer.getCurrentScore();
-                currentPlayerPointer.setTries(new String[]{"-", "-", "-"});
+                }, 2500);
             }
         }
+    }
+
+    private void switchToNextPlayer() {
+        nextPlayer = false;
+        legThrows = 0;
+        do {
+            currentPlayIndex++;
+            if (currentPlayIndex >= playersList.size()) {
+                currentPlayIndex = 0;
+            }
+        } while (playersList.get(currentPlayIndex).getCurrentScore() <= 0);
+
+        currentPlayerPointer = playersList.get(currentPlayIndex);
+        currentPlayer.postValue(currentPlayerPointer);
+        backupScore = currentPlayerPointer.getCurrentScore();
+        currentPlayerPointer.setTries(new String[]{"-", "-", "-"});
     }
 
     private String generateScoreTag(int score) {

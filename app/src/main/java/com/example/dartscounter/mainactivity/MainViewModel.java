@@ -59,7 +59,7 @@ public class MainViewModel extends ViewModel {
     private void setPoints(String points) {
         switch (points){
             case "301":
-                mModel.setPoints(1);
+                mModel.setPoints(301);
                 break;
             case "501":
                 mModel.setPoints(501);

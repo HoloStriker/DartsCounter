@@ -39,6 +39,12 @@ public class FinishPlayersListAdapter extends RecyclerView.Adapter<FinishPlayers
 
         TextView tvPosition = viewGroup.getTvPosition();
         tvPosition.setText(""+(position+1));
+
+        TextView tvDarts = viewGroup.getTvDarts();
+        tvDarts.setText(""+mDataset.get(position).getDartsCount());
+
+        TextView tvAvg = viewGroup.getTvAvg();
+        tvAvg.setText(""+mDataset.get(position).getCurrentAvg());
     }
 
     @Override
